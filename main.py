@@ -7,7 +7,9 @@ import os
 from nacl.pwhash import argon2id
 from nacl.secret import SecretBox
 from nacl.exceptions import CryptoError
+
 from typing import Callable
+from pwinput import pwinput
 from ensure_file import ensure_file as ef
 
 
@@ -30,9 +32,9 @@ def clear():
 
 ef(f"{SAVING_PATH}", folder=True)
 if os.path.exists(f"{SAVING_PATH}/rcman.json.encrypted"):
-    plaintext_pass = input("Enter your password:\n>>> ")
+    plaintext_pass = pwinput("Enter your password:\n>>> ")
 else:
-    plaintext_pass = input("Enter your password that will be used to encrypt your codes (this can NOT be changed later!):\n>>> ")
+    plaintext_pass = pwinput("Enter your password that will be used to encrypt your codes (this can NOT be changed later!):\n>>> ")
     ef(f"{SAVING_PATH}/rcman.json.encrypted", default_value=encrypt("{}", plaintext_pass))
 
 clear()
