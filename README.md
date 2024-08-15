@@ -1,3 +1,6 @@
+> [!NOTE]  
+> This repository has been **migrated** to [git.gay](https://git.gay/trinkey/rcman). The Github version will **no longer be maintained**.
+
 # recovery code manager (rcman)
 manages your recovery codes for websites that use 2 factor authentication. also
 encrypts them with AES encryption and whatnot so that's cool.
